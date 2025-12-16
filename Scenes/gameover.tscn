@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://d5jcox2a6nun"]
+
+[ext_resource type="Script" path="res://Scripts/gameover_screen.gd" id="1_jqbe8"]
+[ext_resource type="Texture2D" uid="uid://dg6jnfxeplv0x" path="res://Assets/Menu/gaming-vector-background-landscape-video-game-fantasy-wallpaper-mountain-posters-controller_597121-841.jpg" id="2_vjlie"]
+[ext_resource type="Texture2D" uid="uid://d4n2dgoloxa38" path="res://Assets/Menu/gameover.png" id="3_2ih80"]
+[ext_resource type="Texture2D" uid="uid://b3tkyyutwhpri" path="res://Assets/Menu/return.png" id="4_1htrl"]
+[ext_resource type="Texture2D" uid="uid://b80ms7suc7ox2" path="res://Assets/Menu/retry.png" id="5_6pr3g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61pto"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lokql"]
+bg_color = Color(0.458405, 0.458405, 0.458405, 0.772549)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqbe8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(578.397, 323)
+scale = Vector2(1.08754, 1.08754)
+texture = ExtResource("2_vjlie")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -2.0
+offset_right = 156.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="Title" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(142, -143)
+scale = Vector2(1.03289, 1.03289)
+texture = ExtResource("3_2ih80")
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_61pto")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lokql")
+theme_override_styles/normal = SubResource("StyleBoxFlat_61pto")
+icon = ExtResource("4_1htrl")
+
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_61pto")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lokql")
+theme_override_styles/normal = SubResource("StyleBoxFlat_61pto")
+icon = ExtResource("5_6pr3g")
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_return_to_menu"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_retry"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="." method="_on_retry2"]

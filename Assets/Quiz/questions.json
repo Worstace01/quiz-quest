@@ -1,0 +1,391 @@
+{
+	"questions": [
+		{
+			"question": "What is the capital of France?",
+			"choices": ["Berlin", "Madrid", "Paris", "Rome"],
+			"correct_answer": "Paris"
+		},
+		{
+			"question": "Which planet is known as the Red Planet?",
+			"choices": ["Venus", "Mars", "Earth", "Jupiter"],
+			"correct_answer": "Mars"
+		},
+		{
+			"question": "Who painted the Mona Lisa?",
+			"choices": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
+			"correct_answer": "Leonardo da Vinci"
+		},
+		{
+			"question": "What is the chemical symbol for gold?",
+			"choices": ["Au", "Ag", "Fe", "Pb"],
+			"correct_answer": "Au"
+		},
+		{
+			"question": "What is the largest land animal?",
+			"choices": ["Elephant", "Giraffe", "Whale", "Rhino"],
+			"correct_answer": "Elephant"
+		},
+		{
+			"question": "What is the longest river in the world?",
+			"choices": ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+			"correct_answer": "Amazon River"
+		},
+		{
+			"question": "Who invented the telephone?",
+			"choices": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Benjamin Franklin"],
+			"correct_answer": "Alexander Graham Bell"
+		},
+		{
+			"question": "What gas do plants absorb from the atmosphere for photosynthesis?",
+			"choices": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+			"correct_answer": "Carbon Dioxide"
+		},
+		{
+			"question": "Which country is famous for the pyramids?",
+			"choices": ["Greece", "Egypt", "Mexico", "India"],
+			"correct_answer": "Egypt"
+		},
+		{
+			"question": "Which element has the atomic number 1?",
+			"choices": ["Hydrogen", "Oxygen", "Nitrogen", "Helium"],
+			"correct_answer": "Hydrogen"
+		},
+		{
+			"question": "What is the fastest land animal?",
+			"choices": ["Cheetah", "Lion", "Horse", "Elephant"],
+			"correct_answer": "Cheetah"
+		},
+		{
+			"question": "Which planet is closest to the Sun?",
+			"choices": ["Earth", "Venus", "Mercury", "Mars"],
+			"correct_answer": "Mercury"
+		},
+		{
+			"question": "Which is the smallest country in the world?",
+			"choices": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+			"correct_answer": "Vatican City"
+		},
+		{
+			"question": "Which language is spoken in Brazil?",
+			"choices": ["Spanish", "Portuguese", "English", "French"],
+			"correct_answer": "Portuguese"
+		},
+		{
+			"question": "Who wrote 'Pride and Prejudice'?",
+			"choices": ["Emily Bronte", "Jane Austen", "Charles Dickens", "Mary Shelley"],
+			"correct_answer": "Jane Austen"
+		},
+		{
+			"question": "What is the largest ocean on Earth?",
+			"choices": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+			"correct_answer": "Pacific Ocean"
+		},
+		{
+			"question": "Which desert is the largest in the world?",
+			"choices": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctic Desert"],
+			"correct_answer": "Antarctic Desert"
+		},
+		{
+			"question": "Who discovered penicillin?",
+			"choices": ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Gregor Mendel"],
+			"correct_answer": "Alexander Fleming"
+		},
+		{
+			"question": "What is the national flower of Japan?",
+			"choices": ["Cherry Blossom", "Rose", "Lotus", "Tulip"],
+			"correct_answer": "Cherry Blossom"
+		},
+		{
+			"question": "What is the tallest mountain in the world?",
+			"choices": ["K2", "Mount Everest", "Kangchenjunga", "Lhotse"],
+			"correct_answer": "Mount Everest"
+		},
+		{
+			"question": "What is the most spoken language in the world?",
+			"choices": ["Spanish", "English", "Hindi", "Mandarin"],
+			"correct_answer": "Mandarin"
+		},
+		{
+			"question": "Who is known as the 'Father of Computers'?",
+			"choices": ["Alan Turing", "Charles Babbage", "John von Neumann", "Bill Gates"],
+			"correct_answer": "Charles Babbage"
+		},
+		{
+			"question": "Which is the largest rainforest in the world?",
+			"choices": ["Amazon Rainforest", "Congo Rainforest", "Daintree Rainforest", "Valdivian Rainforest"],
+			"correct_answer": "Amazon Rainforest"
+		},
+		{
+			"question": "Which country hosted the first modern Olympic Games?",
+			"choices": ["France", "Greece", "Italy", "Switzerland"],
+			"correct_answer": "Greece"
+		},
+		{
+			"question": "What is the hottest planet in the solar system?",
+			"choices": ["Mercury", "Venus", "Mars", "Jupiter"],
+			"correct_answer": "Venus"
+		},
+		
+		{
+			"question": "What is the currency of Japan?",
+			"choices": ["Yen", "Won", "Dollar", "Euro"],
+			"correct_answer": "Yen"
+		},
+		{
+			"question": "Which gas is most abundant in the Earth's atmosphere?",
+			"choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+			"correct_answer": "Nitrogen"
+		},
+		{
+			"question": "What is the main ingredient in guacamole?",
+			"choices": ["Tomato", "Avocado", "Pepper", "Onion"],
+			"correct_answer": "Avocado"
+		},
+		{
+			"question": "Which planet is known for its rings?",
+			"choices": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+			"correct_answer": "Saturn"
+		},
+		{
+			"question": "What is the largest mammal in the world?",
+			"choices": ["Elephant", "Blue Whale", "Giraffe", "Great White Shark"],
+			"correct_answer": "Blue Whale"
+		},
+		{
+			"question": "Who wrote the play 'Romeo and Juliet'?",
+			"choices": ["Charles Dickens", "William Shakespeare", "Mark Twain", "George Orwell"],
+			"correct_answer": "William Shakespeare"
+		},
+		{
+			"question": "What is the boiling point of water in degrees Celsius?",
+			"choices": ["90", "100", "110", "120"],
+			"correct_answer": "100"
+		},
+		{
+			"question": "Which continent is known as the 'Dark Continent'?",
+			"choices": ["Asia", "Africa", "Australia", "South America"],
+			"correct_answer": "Africa"
+		},
+		{
+			"question": "What is the primary language spoken in Egypt?",
+			"choices": ["Arabic", "English", "French", "Spanish"],
+			"correct_answer": "Arabic"
+		},
+		{
+			"question": "Which organ is responsible for pumping blood in the human body?",
+			"choices": ["Liver", "Lungs", "Heart", "Kidneys"],
+			"correct_answer": "Heart"
+		},
+		{
+			"question": "What is the smallest planet in our solar system?",
+			"choices": ["Mercury", "Mars", "Venus", "Earth"],
+			"correct_answer": "Mercury"
+		},
+		{
+			"question": "Which element is represented by the symbol 'O'?",
+			"choices": ["Osmium", "Oxygen", "Gold", "Silver"],
+			"correct_answer": "Oxygen"
+		},
+		{
+			"question": "What is the capital city of Australia?",
+			"choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+			"correct_answer": "Canberra"
+		},
+		{
+			"question": "Which famous scientist developed the theory of relativity?",
+			"choices": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+			"correct_answer": "Albert Einstein"
+		},
+		{
+			"question": "What is the primary ingredient in bread?",
+			"choices": ["Flour", "Sugar", "Salt", "Water"],
+			"correct_answer": "Flour"
+		},
+		{
+			"question": "Which ocean is the largest?",
+			"choices": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+			"correct_answer": "Pacific Ocean"
+		},
+		{
+			"question": "What is the hardest natural substance on Earth?",
+			"choices": ["Gold", "Iron", "Diamond", "Quartz"],
+			"correct_answer": "Diamond"
+		},
+		{
+			"question": "Which country is known as the Land of the Rising Sun?",
+			"choices": ["China", "Japan", "Thailand", "South Korea"],
+			"correct_answer": "Japan"
+		},
+		{
+			"question": "What is the primary function of red blood cells?",
+			"choices": ["Fight infection", "Transport oxygen", "Clot blood", "Regulate temperature"],
+			"correct_answer": "Transport oxygen"
+		},
+		{
+			"question": "Which famous landmark is located in India?",
+			"choices": ["Eiffel Tower", "Great Wall of China", "Taj Mahal", "Colosseum"],
+			"correct_answer": "Taj Mahal"
+		},
+		{
+			"question": "What is the largest planet in our solar system?",
+			"choices": ["Earth", "Mars", "Jupiter", "Saturn"],
+			"correct_answer": "Jupiter"
+		},
+		{
+			"question": "What does CPU stand for?",
+			"choices": ["Central Processing Unit", "Computer Personal Unit", "Central Program Unit", "Computer Processing Unit"],
+			"correct_answer": "Central Processing Unit"
+		},
+		{
+			"question": "Which operating system is developed by Microsoft?",
+			"choices": ["Linux", "macOS", "Windows", "Unix"],
+			"correct_answer": "Windows"
+		},
+		{
+			"question": "What is the primary function of an operating system?",
+			"choices": ["Run applications", "Manage hardware resources", "Store data", "Provide internet access"],
+			"correct_answer": "Manage hardware resources"
+		},
+		{
+			"question": "Which of the following is an open-source operating system?",
+			"choices": ["Windows", "macOS", "Linux", "iOS"],
+			"correct_answer": "Linux"
+		},
+		{
+			"question": "What does RAM stand for?",
+			"choices": ["Read Access Memory", "Random Access Memory", "Rapid Access Memory", "Read And Memory"],
+			"correct_answer": "Random Access Memory"
+		},
+		{
+			"question": "Which programming language is primarily used for web development?",
+			"choices": ["Python", "Java", "HTML", "C++"],
+			"correct_answer": "HTML"
+		},
+		{
+			"question": "What is the main purpose of a firewall?",
+			"choices": ["To speed up the internet", "To protect against unauthorized access", "To store data", "To manage applications"],
+			"correct_answer": "To protect against unauthorized access"
+		},
+		{
+			"question": "Which of the following is a popular web browser?",
+			"choices": ["Microsoft Word", "Adobe Photoshop", "Google Chrome", "Windows Explorer"],
+			"correct_answer": "Google Chrome"
+		},
+		{
+			"question": "What is the function of an antivirus program?",
+			"choices": ["To enhance graphics", "To protect against malware", "To manage files", "To speed up the computer"],
+			"correct_answer": "To protect against malware"
+		},
+		{
+			"question": "Which file system is commonly used by Windows?",
+			"choices": ["FAT32", "NTFS", "ext4", "HFS+"],
+			"correct_answer": "NTFS"
+		},
+		{
+			"question": "What does GUI stand for?",
+			"choices": ["Graphical User Interface", "General User Interface", "Graphical Universal Interface", "General Universal Interface"],
+			"correct_answer": "Graphical User Interface"
+		},
+		{
+			"question": "Which of the following is a cloud storage service?",
+			"choices": ["Dropbox", "Microsoft Word", "Adobe Reader", "Notepad"],
+			"correct_answer": "Dropbox"
+		},
+		{
+			"question": "What is the purpose of a motherboard?",
+			"choices": ["To store data", "To connect all components of a computer", "To provide power", "To manage software"],
+			"correct_answer": "To connect all components of a computer"
+		},
+		{
+			"question": "Which of the following is a type of malware?",
+			"choices": ["Antivirus", "Spyware", "Firewall", "Web browser"],
+			"correct_answer": "Spyware"
+		},
+		{
+			"question": "What is the main function of a hard drive?",
+			"choices": ["To process data", "To store data", "To display graphics", "To connect peripherals"],
+			"correct_answer": "To store data"
+		},
+		{
+			"question": "Which command is used to list files in a directory in Linux?",
+			"choices": ["ls", "dir", "list", "show"],
+			"correct_answer": "ls"
+		},
+		{
+			"question": "What does the term 'booting' refer to?",
+			"choices": ["Starting up a computer", "Shutting down a computer", "Installing software", "Updating the operating system"],
+			"correct_answer": "Starting up a computer"
+		},
+		{
+			"question": "Which of the following is a popular programming language for data science?",
+			"choices": ["Java", "Python", "C#", "HTML"],
+			"correct_answer": "Python"
+		},
+		{
+			"question": "What is the purpose of a device driver?",
+			"choices": ["To manage hardware devices", "To enhance graphics", "To protect against malware", "To store data"],
+			"correct_answer": "To manage hardware devices"
+		},
+		{
+			"question": "Which of the following is a type of computer memory that is non-volatile?",
+			"choices": ["RAM", "Cache", "ROM", "Registers"],
+			"correct_answer": "ROM"
+		},
+		{
+			"question": "What is the primary function of a web server?",
+			"choices": ["To host websites", "To store files", "To run applications", "To manage databases"],
+			"correct_answer": "To host websites"
+		},
+	
+		{
+			"question": "What does SSD stand for?",
+			"choices": ["Solid State Drive", "Super Speed Drive", "Standard Storage Device", "Solid Storage Disk"],
+			"correct_answer": "Solid State Drive"
+		},
+		{
+			"question": "Which of the following is a popular Linux distribution?",
+			"choices": ["Windows 10", "Ubuntu", "macOS", "Android"],
+			"correct_answer": "Ubuntu"
+		},
+		{
+			"question": "What is the purpose of a backup?",
+			"choices": ["To speed up the computer", "To create a copy of data for recovery", "To enhance graphics", "To manage applications"],
+			"correct_answer": "To create a copy of data for recovery"
+		},
+		{
+			"question": "Which protocol is used for secure communication over the internet?",
+			"choices": ["HTTP", "FTP", "HTTPS", "SMTP"],
+			"correct_answer": "HTTPS"
+		},
+		{
+			"question": "What is the function of a router?",
+			"choices": ["To connect multiple networks", "To store data", "To process information", "To display graphics"],
+			"correct_answer": "To connect multiple networks"
+		},
+		{
+			"question": "Which of the following is a type of software that manages computer hardware?",
+			"choices": ["Application software", "System software", "Utility software", "Malware"],
+			"correct_answer": "System software"
+		},
+		{
+			"question": "What does the term 'phishing' refer to?",
+			"choices": ["A type of malware", "A method of stealing personal information", "A network protocol", "A programming language"],
+			"correct_answer": "A method of stealing personal information"
+		},
+		{
+			"question": "Which of the following is a command-line interface?",
+			"choices": ["Windows Explorer", "Terminal", "File Explorer", "Control Panel"],
+			"correct_answer": "Terminal"
+		},
+		{
+			"question": "What is the purpose of a VPN?",
+			"choices": ["To enhance graphics", "To provide a secure connection over the internet", "To speed up the internet", "To manage files"],
+			"correct_answer": "To provide a secure connection over the internet"
+		},
+		{
+			"question": "Which of the following is a type of computer network?",
+			"choices": ["LAN", "WAN", "MAN", "All of the above"],
+			"correct_answer": "All of the above"
+		}
+	]
+}

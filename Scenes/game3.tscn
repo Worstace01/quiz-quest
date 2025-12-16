@@ -1,0 +1,251 @@
+[gd_scene load_steps=27 format=3 uid="uid://bhyl2e3u8g4m7"]
+
+[ext_resource type="Texture2D" uid="uid://c0145hjadmg80" path="res://Assets/spring/IMG_20250119_232617.jpg" id="1_1ira7"]
+[ext_resource type="PackedScene" uid="uid://bvo2ke24mxtbc" path="res://Scenes/enemy3.tscn" id="2_uayjv"]
+[ext_resource type="PackedScene" uid="uid://bvuigrh12vy2x" path="res://Scenes/player.tscn" id="3_iwrnk"]
+[ext_resource type="Script" path="res://Scripts/enemy_scripts/enemy_3.gd" id="3_m4w52"]
+[ext_resource type="Script" path="res://Scripts/quiz_manager.gd" id="4_78prl"]
+[ext_resource type="Script" path="res://Scripts/player_scripts/player3.gd" id="5_0nwxf"]
+[ext_resource type="FontFile" uid="uid://bji88odmjixxg" path="res://Assets/Quiz/Dragon Fire.otf" id="5_jrcp8"]
+[ext_resource type="Script" path="res://Scripts/dialog.gd" id="6_f30ev"]
+[ext_resource type="Texture2D" uid="uid://cx44pttmpf0cg" path="res://Assets/Quiz/Dialog Box.png" id="7_t3xea"]
+[ext_resource type="Script" path="res://Scripts/answers.gd" id="8_rdva5"]
+[ext_resource type="Script" path="res://Scripts/lives.gd" id="9_qnsk6"]
+[ext_resource type="Texture2D" uid="uid://dfl60u40je46m" path="res://Assets/Quiz/vecteezy_red-heart-in-pixel-art-style-8-bit-icon-valentine-s-day_5644880-removebg-preview.png" id="10_3w6y3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kpir6"]
+distance = -6.0
+
+[sub_resource type="Theme" id="Theme_ulukv"]
+default_font = ExtResource("5_jrcp8")
+default_font_size = 24
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67s2i"]
+texture = ExtResource("7_t3xea")
+
+[sub_resource type="Theme" id="Theme_enlfi"]
+Panel/styles/panel = SubResource("StyleBoxTexture_67s2i")
+
+[sub_resource type="Theme" id="Theme_v133x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqrtu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7qkt"]
+texture = ExtResource("7_t3xea")
+
+[sub_resource type="Theme" id="Theme_spo1e"]
+default_font = ExtResource("5_jrcp8")
+default_font_size = 50
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 3
+Button/styles/normal = SubResource("StyleBoxTexture_c7qkt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l833c"]
+texture = ExtResource("7_t3xea")
+
+[sub_resource type="Theme" id="Theme_whgi8"]
+default_font = ExtResource("5_jrcp8")
+default_font_size = 50
+Button/constants/outline_size = 3
+Button/styles/normal = SubResource("StyleBoxTexture_l833c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvw2m"]
+texture = ExtResource("7_t3xea")
+
+[sub_resource type="Theme" id="Theme_ps4mf"]
+default_font = ExtResource("5_jrcp8")
+default_font_size = 50
+Button/constants/outline_size = 3
+Button/styles/normal = SubResource("StyleBoxTexture_xvw2m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofkaf"]
+texture = ExtResource("7_t3xea")
+
+[sub_resource type="Theme" id="Theme_5msfm"]
+default_font = ExtResource("5_jrcp8")
+default_font_size = 50
+Button/constants/outline_size = 3
+Button/styles/normal = SubResource("StyleBoxTexture_ofkaf")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-268, 68)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(268, -68)
+scale = Vector2(0.448984, 0.448984)
+texture = ExtResource("1_1ira7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Enemy_1" parent="." instance=ExtResource("2_uayjv")]
+position = Vector2(282, 21)
+script = ExtResource("3_m4w52")
+
+[node name="Player" parent="." instance=ExtResource("3_iwrnk")]
+position = Vector2(-246, 34)
+script = ExtResource("5_0nwxf")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-304, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_kpir6")
+
+[node name="QuizManager" type="Node" parent="."]
+script = ExtResource("4_78prl")
+
+[node name="Dialog" type="Control" parent="QuizManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -377.0
+offset_top = -205.0
+offset_right = 376.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ulukv")
+script = ExtResource("6_f30ev")
+
+[node name="Panel" type="Panel" parent="QuizManager/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_enlfi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuizManager/Dialog"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 737.0
+offset_bottom = 101.0
+
+[node name="Question" type="RichTextLabel" parent="QuizManager/Dialog/VBoxContainer"]
+layout_mode = 2
+text = "Sample Question
+"
+fit_content = true
+
+[node name="Timer" type="Timer" parent="QuizManager/Dialog/VBoxContainer"]
+
+[node name="Answers" type="Control" parent="QuizManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_rdva5")
+
+[node name="Buttons" type="Panel" parent="QuizManager/Answers"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -321.0
+offset_top = 89.0
+offset_right = 322.0
+offset_bottom = 205.0
+theme = SubResource("Theme_v133x")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nqrtu")
+
+[node name="Button" type="Button" parent="QuizManager/Answers/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 767.0
+offset_bottom = 128.0
+scale = Vector2(0.41, 0.41)
+theme = SubResource("Theme_spo1e")
+text = "Answer"
+
+[node name="Button2" type="Button" parent="QuizManager/Answers/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.0
+offset_top = 60.0
+offset_right = 767.0
+offset_bottom = 183.0
+scale = Vector2(0.41, 0.41)
+theme = SubResource("Theme_whgi8")
+text = "Answer"
+
+[node name="Button3" type="Button" parent="QuizManager/Answers/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 326.0
+offset_top = 6.0
+offset_right = 1089.0
+offset_bottom = 129.0
+scale = Vector2(0.41, 0.41)
+theme = SubResource("Theme_ps4mf")
+text = "Answer"
+
+[node name="Button4" type="Button" parent="QuizManager/Answers/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 326.0
+offset_top = 61.0
+offset_right = 1089.0
+offset_bottom = 184.0
+scale = Vector2(0.41, 0.41)
+theme = SubResource("Theme_5msfm")
+text = "Answer"
+
+[node name="Lives" type="Control" parent="QuizManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_qnsk6")
+
+[node name="CharacterLives" type="Panel" parent="QuizManager/Lives"]
+layout_mode = 0
+offset_left = -309.0
+offset_top = -44.0
+offset_right = -239.0
+offset_bottom = -25.0
+scale = Vector2(1.00252, 1)
+
+[node name="CharLife2" type="Sprite2D" parent="QuizManager/Lives/CharacterLives"]
+position = Vector2(36.0679, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")
+
+[node name="CharLife1" type="Sprite2D" parent="QuizManager/Lives/CharacterLives"]
+position = Vector2(11.0249, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")
+
+[node name="CharLife3" type="Sprite2D" parent="QuizManager/Lives/CharacterLives"]
+position = Vector2(59.8491, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")
+
+[node name="EnemyLives" type="Panel" parent="QuizManager/Lives"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = -44.0
+offset_right = 318.0
+offset_bottom = -25.0
+scale = Vector2(1.00252, 1)
+
+[node name="EnemLife2" type="Sprite2D" parent="QuizManager/Lives/EnemyLives"]
+position = Vector2(36.0679, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")
+
+[node name="EnemLife1" type="Sprite2D" parent="QuizManager/Lives/EnemyLives"]
+position = Vector2(11.0249, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")
+
+[node name="EnemLife3" type="Sprite2D" parent="QuizManager/Lives/EnemyLives"]
+position = Vector2(59.8492, 10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("10_3w6y3")

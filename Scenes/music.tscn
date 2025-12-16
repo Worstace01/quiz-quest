@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ofvrrywis2n"]
+
+[ext_resource type="AudioStream" uid="uid://ckm1ldxh1e31j" path="res://Assets/SFX/Medieval Battle Music - Dragon's Lair.mp3" id="1_6byyf"]
+[ext_resource type="Script" path="res://audioplayer.gd" id="2_8qnpl"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6byyf")
+volume_db = -1.185
+script = ExtResource("2_8qnpl")

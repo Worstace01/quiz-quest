@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://chtq35mwc3fn2"]
+
+[ext_resource type="Script" path="res://Scripts/victory.gd" id="1_6lthc"]
+[ext_resource type="Texture2D" uid="uid://bwtsyygxcqylc" path="res://Assets/Menu/480b7aea-c5b6-41fb-a4c7-37469edbdbf5.jpg" id="2_ptuyy"]
+[ext_resource type="Texture2D" uid="uid://3q7f7rk0rp42" path="res://Assets/Menu/victory.png" id="3_q6itx"]
+[ext_resource type="Texture2D" uid="uid://b3tkyyutwhpri" path="res://Assets/Menu/return.png" id="4_udf10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhofu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38shg"]
+bg_color = Color(0.458405, 0.458405, 0.458405, 0.772549)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6lthc")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(568, 410)
+texture = ExtResource("2_ptuyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 291)
+scale = Vector2(1.16153, 1.16153)
+texture = ExtResource("3_q6itx")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 413.0
+offset_top = 361.0
+offset_right = 725.0
+offset_bottom = 466.0
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhofu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_38shg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhofu")
+icon = ExtResource("4_udf10")
+
+[connection signal="pressed" from="Button" to="." method="_on_return_to_menu2"]

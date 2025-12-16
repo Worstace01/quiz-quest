@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckm1ldxh1e31j"
+path="res://.godot/imported/Medieval Battle Music - Dragon's Lair.mp3-b58af16266214ab0b44e80cabc4b19ed.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Medieval Battle Music - Dragon's Lair.mp3"
+dest_files=["res://.godot/imported/Medieval Battle Music - Dragon's Lair.mp3-b58af16266214ab0b44e80cabc4b19ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
