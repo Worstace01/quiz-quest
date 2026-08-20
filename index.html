@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Quest — Andrie Deuna</title>
-    <meta name="description" content="An interactive quiz game built with Godot Engine and GDScript by Andrie Deuna.">
+    <meta name="description" content="An RPG-style quiz battle game built with Godot Engine and GDScript by Andrie Deuna.">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
             --purple: #8b5cf6;
             --purple-light: #a78bfa;
+            --gold: #f59e0b;
             --bg: #09090b;
             --surface: #18181b;
             --border: #27272a;
@@ -29,7 +30,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(24,24,27,0.8);
+            background: rgba(24,24,27,0.9);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -48,8 +49,7 @@
             display: inline-flex; align-items: center; gap: 0.5rem;
             padding: 0.6rem 1.2rem;
             border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.85rem; font-weight: 600;
             text-decoration: none;
             transition: all 0.2s;
             border: 1px solid var(--border);
@@ -65,45 +65,38 @@
         }
         .badge {
             display: inline-flex; align-items: center; gap: 0.4rem;
-            background: rgba(139,92,246,0.1);
-            border: 1px solid rgba(139,92,246,0.3);
-            color: var(--purple-light);
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.3);
+            color: var(--gold);
             padding: 0.4rem 1rem;
             border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.8rem; font-weight: 600;
             margin-bottom: 1.5rem;
         }
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ede9fe, var(--purple));
+            background: linear-gradient(135deg, #fef9c3, var(--gold), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .subtitle { color: var(--muted); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+        .subtitle { color: var(--muted); font-size: 1.1rem; max-width: 580px; margin: 0 auto 2rem; line-height: 1.6; }
         .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.5rem; }
         .tag {
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: var(--surface); border: 1px solid var(--border);
             color: var(--muted);
-            padding: 0.35rem 0.9rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
+            padding: 0.35rem 0.9rem; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 500;
         }
         .btn-group { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
         .btn {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.85rem 1.75rem;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
+            padding: 0.85rem 1.75rem; border-radius: 10px;
+            font-size: 0.9rem; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
         }
         .btn-primary {
             background: linear-gradient(135deg, var(--purple), #7c3aed);
@@ -117,57 +110,54 @@
             color: var(--text);
         }
         .btn-secondary:hover { border-color: var(--purple); color: var(--purple); }
-        .about-section {
-            max-width: 900px;
+
+        /* Game Preview Cards */
+        .preview-section {
+            max-width: 950px;
             margin: 0 auto 4rem;
             padding: 0 2rem;
         }
-        .about-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-        .about-card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
-        .about-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.75rem; line-height: 1.7; }
-        .about-card code {
-            background: rgba(139,92,246,0.15);
-            border: 1px solid rgba(139,92,246,0.2);
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.85em;
-            color: var(--purple-light);
-        }
-        .structure {
-            background: #0d0d14;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            margin-top: 1rem;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #a1a1aa;
-            line-height: 1.8;
-        }
-        .structure .dir { color: var(--purple-light); }
-        .structure .file { color: #a1a1aa; }
-        .features {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-        }
-        .features h2 {
+        .section-label {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 0.78rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
             margin-bottom: 1.5rem;
         }
-        .features-grid {
+        .preview-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+        @media(max-width: 600px) { .preview-grid { grid-template-columns: 1fr; } }
+        .preview-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+            position: relative;
+        }
+        .preview-card:hover { border-color: rgba(139,92,246,0.4); transform: translateY(-3px); }
+        .preview-card.featured { grid-column: 1 / -1; }
+        .preview-card img {
+            width: 100%; display: block;
+            max-height: 320px;
+            object-fit: cover;
+            object-position: top;
+        }
+        .preview-card .label {
+            padding: 0.6rem 0.9rem;
+            font-size: 0.78rem; color: var(--muted); font-weight: 600;
+            border-top: 1px solid var(--border);
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+
+        .features { max-width: 900px; margin: 0 auto 4rem; padding: 0 2rem; }
+        .features h2 { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
         .feature-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -176,27 +166,20 @@
         }
         .feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
         .feature-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
-        .feature-desc { font-size: 0.82rem; color: var(--muted); }
-        .source-link-section {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
-            text-align: center;
-        }
+        .feature-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+        .source-link-section { max-width: 900px; margin: 0 auto 4rem; padding: 0 2rem; text-align: center; }
         .source-card {
             background: var(--surface);
             border: 1px solid rgba(139,92,246,0.2);
-            border-radius: 16px;
-            padding: 2.5rem;
+            border-radius: 16px; padding: 2.5rem;
         }
         .source-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
         .source-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
         footer {
             border-top: 1px solid var(--border);
             padding: 1.5rem 2rem;
-            text-align: center;
-            font-size: 0.82rem;
-            color: var(--muted);
+            text-align: center; font-size: 0.82rem; color: var(--muted);
         }
         footer a { color: var(--purple); text-decoration: none; }
     </style>
@@ -205,7 +188,7 @@
 
 <header>
     <a class="logo" href="https://worstace01.github.io/personal-portfolio/">
-        <div class="logo-icon">🧠</div>
+        <div class="logo-icon">⚔️</div>
         <span class="logo-text">Quiz Quest</span>
     </a>
     <a class="header-btn" href="https://github.com/Worstace01/quiz-quest" target="_blank">
@@ -215,15 +198,16 @@
 </header>
 
 <section class="hero">
-    <div class="badge">🎮 Godot Engine Game</div>
+    <div class="badge">⚔️ RPG Quiz Battle Game</div>
     <h1>Quiz Quest</h1>
-    <p class="subtitle">An interactive quiz game built with the <strong>Godot Engine</strong> and <strong>GDScript</strong>. Developed by <strong>Andrie Deuna</strong>.</p>
+    <p class="subtitle">An RPG-style quiz battle game where you fight enemies by answering trivia questions correctly. Built with <strong>Godot Engine</strong> and <strong>GDScript</strong>. Developed by <strong>Andrie Deuna</strong>.</p>
     <div class="tech-tags">
         <span class="tag">Godot Engine</span>
         <span class="tag">GDScript</span>
-        <span class="tag">Game Development</span>
-        <span class="tag">Educational</span>
-        <span class="tag">Block Coding</span>
+        <span class="tag">2D RPG</span>
+        <span class="tag">Pixel Art</span>
+        <span class="tag">Quiz Game</span>
+        <span class="tag">Turn-based Battle</span>
     </div>
     <div class="btn-group">
         <a class="btn btn-primary" href="https://github.com/Worstace01/quiz-quest" target="_blank">
@@ -236,45 +220,56 @@
     </div>
 </section>
 
-<section class="about-section">
-    <div class="about-card">
-        <h2>🎮 About the Project</h2>
-        <p>Quiz Quest is a game logic template and interactive knowledge quiz built inside the Godot Game Engine. It demonstrates Godot&rsquo;s scene system, UI interactions, audio management, and state machines using <code>GDScript</code>.</p>
-        <p>It also includes support for <code>block_code</code> visual scripting via the addons system, making the project accessible to visual/block-based learners as well.</p>
-        <div class="structure">
-            <span class="dir">quiz-quest/</span><br>
-            &nbsp;&nbsp;<span class="dir">├── Assets/</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f3f46"># Images, sounds, fonts</span><br>
-            &nbsp;&nbsp;<span class="dir">├── Scenes/</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f3f46"># Godot scene files (.tscn)</span><br>
-            &nbsp;&nbsp;<span class="dir">├── Scripts/</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f3f46"># GDScript logic files (.gd)</span><br>
-            &nbsp;&nbsp;<span class="dir">├── addons/</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f3f46"># Plugins (block_code)</span><br>
-            &nbsp;&nbsp;<span class="file">├── audioplayer.gd</span>&nbsp;&nbsp;<span style="color:#3f3f46"># Global audio manager</span><br>
-            &nbsp;&nbsp;<span class="file">└── project.godot</span>&nbsp;&nbsp;&nbsp;<span style="color:#3f3f46"># Godot project config</span>
+<section class="preview-section">
+    <div class="section-label">🎮 Gameplay Screenshots</div>
+    <div class="preview-grid">
+        <div class="preview-card featured">
+            <img src="Assets/gameover.png" alt="Quiz Quest Game Over Screen" onerror="this.parentElement.style.display='none'">
+            <div class="label">🏰 Game Over Screen — Fantasy Castle Setting</div>
+        </div>
+        <div class="preview-card">
+            <img src="Assets/gameplay.png" alt="Quiz Quest Battle Gameplay" onerror="this.parentElement.style.display='none'">
+            <div class="label">⚔️ Battle Scene — Answer Questions to Fight</div>
+        </div>
+        <div class="preview-card">
+            <img src="icon.svg" alt="Quiz Quest Icon" style="object-fit: contain; padding: 2rem; background:#111118;" onerror="this.parentElement.style.display='none'">
+            <div class="label">🎨 Game Icon</div>
         </div>
     </div>
 </section>
 
 <section class="features">
-    <h2>Key Features</h2>
+    <h2>Game Features</h2>
     <div class="features-grid">
         <div class="feature-card">
-            <div class="feature-icon">💬</div>
-            <div class="feature-title">Interactive Quiz UI</div>
-            <div class="feature-desc">Clean Godot UI for displaying questions and handling answer selection with instant feedback.</div>
+            <div class="feature-icon">⚔️</div>
+            <div class="feature-title">RPG Battle System</div>
+            <div class="feature-desc">Answer trivia questions correctly to deal damage to enemies in a turn-based battle system.</div>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">🎞️</div>
-            <div class="feature-title">Game State Management</div>
-            <div class="feature-desc">Manages multiple game states: start screen, question phase, scoring, and end screen.</div>
+            <div class="feature-icon">❤️</div>
+            <div class="feature-title">Health / Lives System</div>
+            <div class="feature-desc">Both you and your enemy have 3 hearts. Wrong answers cost HP. Run out and it’s Game Over!</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <div class="feature-title">Fantasy Pixel Art</div>
+            <div class="feature-desc">Hand-crafted 2D pixel art characters, backgrounds, and UI elements built inside Godot.</div>
         </div>
         <div class="feature-card">
             <div class="feature-icon">🔊</div>
             <div class="feature-title">Audio Manager</div>
-            <div class="feature-desc">Dedicated <code>audioplayer.gd</code> handles background music and sound effects globally.</div>
+            <div class="feature-desc">Global <code>audioplayer.gd</code> handles background music and sound effects throughout the game.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <div class="feature-title">Win / Game Over Screens</div>
+            <div class="feature-desc">Dedicated scenes for Game Over and Victory with Retry and Return to Menu options.</div>
         </div>
         <div class="feature-card">
             <div class="feature-icon">🧩</div>
-            <div class="feature-title">Block Coding Support</div>
-            <div class="feature-desc">Uses the <code>block_code</code> addon for visual, block-style scripting alongside GDScript.</div>
+            <div class="feature-title">Block Coding Addon</div>
+            <div class="feature-desc">Includes the block_code visual scripting addon for accessible, block-style game logic.</div>
         </div>
     </div>
 </section>
@@ -282,7 +277,7 @@
 <section class="source-link-section">
     <div class="source-card">
         <h3>🎮 This is a Godot Desktop Game</h3>
-        <p>This game was built with Godot Engine and runs as a desktop application &mdash; it cannot run directly in the browser without a Godot HTML5 export. Browse the full source code on GitHub.</p>
+        <p>Quiz Quest runs as a native desktop application using the Godot Engine — it cannot run directly in the browser without an HTML5 export. Browse all scenes, scripts, and assets on GitHub.</p>
         <a class="btn btn-primary" href="https://github.com/Worstace01/quiz-quest" target="_blank">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
             View on GitHub
